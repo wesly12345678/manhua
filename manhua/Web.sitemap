@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Home" url="~/home.aspx" >
+    <siteMapNode title="Login" url="~/Authentication/login.aspx" />
+    <siteMapNode title="Register" url="~/Authentication/choiceone.aspx" />
+    <siteMapNode title="Logout" url="~/Authentication/logout.aspx" />
+    <siteMapNode title="Category" url="~/Comic.aspx" />
+    <siteMapNode title="About Us" url="~/About.aspx" />
+    <siteMapNode title="Vip" url="~/Vip.aspx" />
+
+
+    <siteMapNode title="reader" roles="Customer">
+      <siteMapNode title="Edit Profile" url="reader/EditProfile.aspx" />
+      <siteMapNode title="Payment History" url="reader/PaymentHistory.aspx" />
+      <siteMapNode title="Favourite" url="reader/FavouriteList.aspx" />
+
+    </siteMapNode>
+    <siteMapNode title="ComicCreator" roles="comic">
+      <siteMapNode title="Profile" url="~/Profile.aspx" />
+      <siteMapNode title="Add Comic" url="~/comicCreator/AddComic.aspx" />
+    </siteMapNode>
+
+    <siteMapNode title="Admin" roles="Admin">
+      <siteMapNode title="Edit Profile" url="~/Admin/Profile.aspx" />
+      <siteMapNode title="Register Admin" url="~/Admin/AdminRegister.aspx" />
+      <siteMapNode title="Payment History" url="" />
+      <siteMapNode title="Ban" url="~/Admin/ban.aspx" />
+      <siteMapNode title="Verify Comic" url="~/Admin/UnverifyComicList.aspx" />
+      <siteMapNode title="Upload Slide Show Picture" url="~/Admin/UploadSlideShow.aspx" />
+      <siteMapNode title="Report" url="~/Report/report1.aspx" />
+
+    </siteMapNode>
+  </siteMapNode>
+
+</siteMap>
+

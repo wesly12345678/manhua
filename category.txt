@@ -1,0 +1,24 @@
+adventure
+horrible
+school
+love
+war
+history
+sport
+comedy
+children
+Magic
+Science
+Suspense
+
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Ad', N'Adventure')
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Ch', N'Children')
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Co', N'Comedy')
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Hi', N'History')
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Ho', N'Horrible')
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Lo', N'Love')
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Ma', N'Magic')
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Sc', N'School')
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Sp', N'Sport')
+INSERT INTO [dbo].[Category] ([Id], [name]) VALUES (N'Wa', N'War')
+INSERT INTO [dbo].[Category] ([Ca.Id], [Ca.Name]) VALUES (N'Su', N'Suspense')

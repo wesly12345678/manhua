@@ -1,0 +1,1203 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{74064975-770E-4729-AA84-DED7AB6230FB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>manhua</RootNamespace>
+    <AssemblyName>manhua</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.3.5\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.5.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Admin\AdminRegister.aspx" />
+    <Content Include="Admin\ban.aspx" />
+    <Content Include="Admin\banCC.aspx" />
+    <Content Include="Admin\PaymentHistoryAll.aspx" />
+    <Content Include="Admin\Profile.aspx" />
+    <Content Include="Admin\UnverifyComicList.aspx" />
+    <Content Include="Admin\UploadSlideShow.aspx" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="Authentication\choiceone.aspx" />
+    <Content Include="Authentication\forgetPassword.aspx" />
+    <Content Include="Authentication\login.aspx" />
+    <Content Include="Authentication\logout.aspx" />
+    <Content Include="Authentication\Register.aspx" />
+    <Content Include="Authentication\registerComic.aspx" />
+    <Content Include="Authentication\SendEmail.html" />
+    <Content Include="Comic.aspx" />
+    <Content Include="comicCreator\AddComic.aspx" />
+    <Content Include="comicCreator\AddEpisode.aspx" />
+    <Content Include="comicCreator\editProfile.aspx" />
+    <Content Include="error.aspx" />
+    <Content Include="pic\profile\0.jpg" />
+    <Content Include="pic\profile\2313282.jpg" />
+    <Content Include="pic\slideshow\9647329.jpg" />
+    <Content Include="Profile.aspx" />
+    <Content Include="comicCreator\UpdateComicInfo.aspx" />
+    <Content Include="comicCreator\UpdateEpisode.aspx" />
+    <Content Include="css\DisplayComic.css" />
+    <Content Include="css\home.css" />
+    <Content Include="css\layout.css" />
+    <Content Include="css\register.css" />
+    <Content Include="css\UploadSlideShow.css" />
+    <Content Include="data1\images\20190314212022_360x480_44.jpg" />
+    <Content Include="DisplayComic.aspx" />
+    <Content Include="engine1\jquery.js" />
+    <Content Include="engine1\script.js" />
+    <Content Include="engine1\style.css" />
+    <Content Include="engine1\style.mod.css" />
+    <Content Include="engine1\wowslider.js" />
+    <Content Include="engine1\wowslider.mod.js" />
+    <Content Include="reader\FavouriteList.aspx" />
+    <Content Include="Feedback.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="home.aspx" />
+    <Content Include="pic\background_image\20170523123304.jpeg" />
+    <Content Include="pic\background_image\background%28images%29.jpeg" />
+    <Content Include="pic\background_image\credit-cards.png" />
+    <Content Include="pic\background_image\male.jpg" />
+    <Content Include="pic\background_image\mangazuki-manga-1024x430.jpg" />
+    <Content Include="pic\background_image\paypal.png" />
+    <Content Include="pic\background_image\vipBack3.jpg" />
+    <Content Include="pic\comic\10223167\10223167.jpg" />
+    <Content Include="pic\comic\1107211\1107211.jpg" />
+    <Content Include="pic\comic\11954042\11954042.jpg" />
+    <Content Include="pic\comic\11954042\1\1.jpg" />
+    <Content Include="pic\comic\11954042\1\10.jpg" />
+    <Content Include="pic\comic\11954042\1\11.jpg" />
+    <Content Include="pic\comic\11954042\1\12.jpg" />
+    <Content Include="pic\comic\11954042\1\13.jpg" />
+    <Content Include="pic\comic\11954042\1\14.jpg" />
+    <Content Include="pic\comic\11954042\1\15.jpg" />
+    <Content Include="pic\comic\11954042\1\16.jpg" />
+    <Content Include="pic\comic\11954042\1\17.jpg" />
+    <Content Include="pic\comic\11954042\1\18.jpg" />
+    <Content Include="pic\comic\11954042\1\19.jpg" />
+    <Content Include="pic\comic\11954042\1\2.jpg" />
+    <Content Include="pic\comic\11954042\1\20.jpg" />
+    <Content Include="pic\comic\11954042\1\21.jpg" />
+    <Content Include="pic\comic\11954042\1\22.jpg" />
+    <Content Include="pic\comic\11954042\1\23.jpg" />
+    <Content Include="pic\comic\11954042\1\24.jpg" />
+    <Content Include="pic\comic\11954042\1\25.jpg" />
+    <Content Include="pic\comic\11954042\1\26.jpg" />
+    <Content Include="pic\comic\11954042\1\27.jpg" />
+    <Content Include="pic\comic\11954042\1\28.jpg" />
+    <Content Include="pic\comic\11954042\1\29.jpg" />
+    <Content Include="pic\comic\11954042\1\3.jpg" />
+    <Content Include="pic\comic\11954042\1\30.jpg" />
+    <Content Include="pic\comic\11954042\1\4.jpg" />
+    <Content Include="pic\comic\11954042\1\5.jpg" />
+    <Content Include="pic\comic\11954042\1\6.jpg" />
+    <Content Include="pic\comic\11954042\1\7.jpg" />
+    <Content Include="pic\comic\11954042\1\8.jpg" />
+    <Content Include="pic\comic\11954042\1\9.jpg" />
+    <Content Include="pic\comic\11954042\2\1.jpg" />
+    <Content Include="pic\comic\11954042\2\10.jpg" />
+    <Content Include="pic\comic\11954042\2\2.jpg" />
+    <Content Include="pic\comic\11954042\2\3.jpg" />
+    <Content Include="pic\comic\11954042\2\4.jpg" />
+    <Content Include="pic\comic\11954042\2\5.jpg" />
+    <Content Include="pic\comic\11954042\2\6.jpg" />
+    <Content Include="pic\comic\11954042\2\7.jpg" />
+    <Content Include="pic\comic\11954042\2\8.jpg" />
+    <Content Include="pic\comic\11954042\2\9.jpg" />
+    <Content Include="pic\comic\11954042\4\1.jpg" />
+    <Content Include="pic\comic\11954042\4\10.jpg" />
+    <Content Include="pic\comic\11954042\4\2.jpg" />
+    <Content Include="pic\comic\11954042\4\3.jpg" />
+    <Content Include="pic\comic\11954042\4\4.jpg" />
+    <Content Include="pic\comic\11954042\4\5.jpg" />
+    <Content Include="pic\comic\11954042\4\6.jpg" />
+    <Content Include="pic\comic\11954042\4\7.jpg" />
+    <Content Include="pic\comic\11954042\4\8.jpg" />
+    <Content Include="pic\comic\11954042\4\9.jpg" />
+    <Content Include="pic\comic\11954042\5\1.jpg" />
+    <Content Include="pic\comic\11954042\5\10.jpg" />
+    <Content Include="pic\comic\11954042\5\2.jpg" />
+    <Content Include="pic\comic\11954042\5\3.jpg" />
+    <Content Include="pic\comic\11954042\5\4.jpg" />
+    <Content Include="pic\comic\11954042\5\5.jpg" />
+    <Content Include="pic\comic\11954042\5\6.jpg" />
+    <Content Include="pic\comic\11954042\5\7.jpg" />
+    <Content Include="pic\comic\11954042\5\8.jpg" />
+    <Content Include="pic\comic\11954042\5\9.jpg" />
+    <Content Include="pic\comic\12155937\12155937.jpg" />
+    <Content Include="pic\comic\12155937\1\1.jpg" />
+    <Content Include="pic\comic\12155937\1\10.jpg" />
+    <Content Include="pic\comic\12155937\1\2.jpg" />
+    <Content Include="pic\comic\12155937\1\3.jpg" />
+    <Content Include="pic\comic\12155937\1\4.jpg" />
+    <Content Include="pic\comic\12155937\1\5.jpg" />
+    <Content Include="pic\comic\12155937\1\6.jpg" />
+    <Content Include="pic\comic\12155937\1\7.jpg" />
+    <Content Include="pic\comic\12155937\1\8.jpg" />
+    <Content Include="pic\comic\12155937\1\9.jpg" />
+    <Content Include="pic\comic\12155937\2\1.jpg" />
+    <Content Include="pic\comic\12155937\2\10.jpg" />
+    <Content Include="pic\comic\12155937\2\2.jpg" />
+    <Content Include="pic\comic\12155937\2\3.jpg" />
+    <Content Include="pic\comic\12155937\2\4.jpg" />
+    <Content Include="pic\comic\12155937\2\5.jpg" />
+    <Content Include="pic\comic\12155937\2\6.jpg" />
+    <Content Include="pic\comic\12155937\2\7.jpg" />
+    <Content Include="pic\comic\12155937\2\8.jpg" />
+    <Content Include="pic\comic\12155937\2\9.jpg" />
+    <Content Include="pic\comic\12155937\4\1.jpg" />
+    <Content Include="pic\comic\12155937\4\10.jpg" />
+    <Content Include="pic\comic\12155937\4\2.jpg" />
+    <Content Include="pic\comic\12155937\4\3.jpg" />
+    <Content Include="pic\comic\12155937\4\4.jpg" />
+    <Content Include="pic\comic\12155937\4\5.jpg" />
+    <Content Include="pic\comic\12155937\4\6.jpg" />
+    <Content Include="pic\comic\12155937\4\7.jpg" />
+    <Content Include="pic\comic\12155937\4\8.jpg" />
+    <Content Include="pic\comic\12155937\4\9.jpg" />
+    <Content Include="pic\comic\12155937\5\1.jpg" />
+    <Content Include="pic\comic\12155937\5\10.jpg" />
+    <Content Include="pic\comic\12155937\5\2.jpg" />
+    <Content Include="pic\comic\12155937\5\3.jpg" />
+    <Content Include="pic\comic\12155937\5\4.jpg" />
+    <Content Include="pic\comic\12155937\5\5.jpg" />
+    <Content Include="pic\comic\12155937\5\6.jpg" />
+    <Content Include="pic\comic\12155937\5\7.jpg" />
+    <Content Include="pic\comic\12155937\5\8.jpg" />
+    <Content Include="pic\comic\12155937\5\9.jpg" />
+    <Content Include="pic\comic\13220958\13220958.jpg" />
+    <Content Include="pic\comic\15131660\15131660.jpg" />
+    <Content Include="pic\comic\15245258\15245258.jpg" />
+    <Content Include="pic\comic\16467363\16467363.jpg" />
+    <Content Include="pic\comic\16509068\16509068.jpg" />
+    <Content Include="pic\comic\1767025\1767025.jpg" />
+    <Content Include="pic\comic\21082900\21082900.jpg" />
+    <Content Include="pic\comic\21561208\21561208.jpg" />
+    <Content Include="pic\comic\22439290\22439290.jpg" />
+    <Content Include="pic\comic\23233640\23233640.jpg" />
+    <Content Include="pic\comic\23312085\23312085.jpg" />
+    <Content Include="pic\comic\2477930\2477930.jpg" />
+    <Content Include="pic\comic\25119292\25119292.jpg" />
+    <Content Include="pic\comic\28339165\28339165.jpg" />
+    <Content Include="pic\comic\30671320\30671320.jpg" />
+    <Content Include="pic\comic\30755919\30755919.jpg" />
+    <Content Include="pic\comic\31431111\31431111.jpg" />
+    <Content Include="pic\comic\31523086\31523086.jpg" />
+    <Content Include="pic\comic\3243315\3243315.jpg" />
+    <Content Include="pic\comic\38504478\38504478.jpg" />
+    <Content Include="pic\comic\4173902\4173902.jpg" />
+    <Content Include="pic\comic\42303779\10\1.jpg" />
+    <Content Include="pic\comic\42303779\10\2.jpg" />
+    <Content Include="pic\comic\42303779\10\3.jpg" />
+    <Content Include="pic\comic\42303779\10\4.jpg" />
+    <Content Include="pic\comic\42303779\10\5.jpg" />
+    <Content Include="pic\comic\42303779\10\6.jpg" />
+    <Content Include="pic\comic\42303779\10\7.jpg" />
+    <Content Include="pic\comic\42303779\1\1.jpg" />
+    <Content Include="pic\comic\42303779\1\10.jpg" />
+    <Content Include="pic\comic\42303779\1\11.jpg" />
+    <Content Include="pic\comic\42303779\1\12.jpg" />
+    <Content Include="pic\comic\42303779\1\13.jpg" />
+    <Content Include="pic\comic\42303779\1\14.jpg" />
+    <Content Include="pic\comic\42303779\1\15.jpg" />
+    <Content Include="pic\comic\42303779\1\2.jpg" />
+    <Content Include="pic\comic\42303779\1\3.jpg" />
+    <Content Include="pic\comic\42303779\1\4.jpg" />
+    <Content Include="pic\comic\42303779\1\5.jpg" />
+    <Content Include="pic\comic\42303779\1\6.jpg" />
+    <Content Include="pic\comic\42303779\1\7.jpg" />
+    <Content Include="pic\comic\42303779\1\8.jpg" />
+    <Content Include="pic\comic\42303779\1\9.jpg" />
+    <Content Include="pic\comic\42303779\2\1.jpg" />
+    <Content Include="pic\comic\42303779\2\10.jpg" />
+    <Content Include="pic\comic\42303779\2\11.jpg" />
+    <Content Include="pic\comic\42303779\2\12.jpg" />
+    <Content Include="pic\comic\42303779\2\13.jpg" />
+    <Content Include="pic\comic\42303779\2\14.jpg" />
+    <Content Include="pic\comic\42303779\2\15.jpg" />
+    <Content Include="pic\comic\42303779\2\2.jpg" />
+    <Content Include="pic\comic\42303779\2\3.jpg" />
+    <Content Include="pic\comic\42303779\2\4.jpg" />
+    <Content Include="pic\comic\42303779\2\5.jpg" />
+    <Content Include="pic\comic\42303779\2\6.jpg" />
+    <Content Include="pic\comic\42303779\2\7.jpg" />
+    <Content Include="pic\comic\42303779\2\8.jpg" />
+    <Content Include="pic\comic\42303779\2\9.jpg" />
+    <Content Include="pic\comic\42303779\3\1.jpg" />
+    <Content Include="pic\comic\42303779\3\10.jpg" />
+    <Content Include="pic\comic\42303779\3\2.jpg" />
+    <Content Include="pic\comic\42303779\3\3.jpg" />
+    <Content Include="pic\comic\42303779\3\4.jpg" />
+    <Content Include="pic\comic\42303779\3\5.jpg" />
+    <Content Include="pic\comic\42303779\3\6.jpg" />
+    <Content Include="pic\comic\42303779\3\7.jpg" />
+    <Content Include="pic\comic\42303779\3\8.jpg" />
+    <Content Include="pic\comic\42303779\3\9.jpg" />
+    <Content Include="pic\comic\42303779\42303779.jpg" />
+    <Content Include="pic\comic\42303779\4\1.jpg" />
+    <Content Include="pic\comic\42303779\4\2.jpg" />
+    <Content Include="pic\comic\42303779\4\3.jpg" />
+    <Content Include="pic\comic\42303779\4\4.jpg" />
+    <Content Include="pic\comic\42303779\4\5.jpg" />
+    <Content Include="pic\comic\42303779\5\1.jpg" />
+    <Content Include="pic\comic\42303779\5\2.jpg" />
+    <Content Include="pic\comic\42303779\5\3.jpg" />
+    <Content Include="pic\comic\42303779\5\4.jpg" />
+    <Content Include="pic\comic\42303779\5\5.jpg" />
+    <Content Include="pic\comic\42303779\5\6.jpg" />
+    <Content Include="pic\comic\42303779\5\7.jpg" />
+    <Content Include="pic\comic\42303779\6\1.jpg" />
+    <Content Include="pic\comic\42303779\6\2.jpg" />
+    <Content Include="pic\comic\42303779\6\3.jpg" />
+    <Content Include="pic\comic\42303779\6\4.jpg" />
+    <Content Include="pic\comic\42303779\6\5.jpg" />
+    <Content Include="pic\comic\42303779\6\6.jpg" />
+    <Content Include="pic\comic\42303779\6\7.jpg" />
+    <Content Include="pic\comic\42303779\7\1.jpg" />
+    <Content Include="pic\comic\42303779\7\2.jpg" />
+    <Content Include="pic\comic\42303779\7\3.jpg" />
+    <Content Include="pic\comic\42303779\7\4.jpg" />
+    <Content Include="pic\comic\42303779\7\5.jpg" />
+    <Content Include="pic\comic\42303779\7\6.jpg" />
+    <Content Include="pic\comic\42303779\7\7.jpg" />
+    <Content Include="pic\comic\42303779\8\1.jpg" />
+    <Content Include="pic\comic\42303779\8\2.jpg" />
+    <Content Include="pic\comic\42303779\8\3.jpg" />
+    <Content Include="pic\comic\42303779\8\4.jpg" />
+    <Content Include="pic\comic\42303779\8\5.jpg" />
+    <Content Include="pic\comic\42303779\8\6.jpg" />
+    <Content Include="pic\comic\42303779\8\7.jpg" />
+    <Content Include="pic\comic\42303779\9\1.jpg" />
+    <Content Include="pic\comic\42303779\9\2.jpg" />
+    <Content Include="pic\comic\42303779\9\3.jpg" />
+    <Content Include="pic\comic\42303779\9\4.jpg" />
+    <Content Include="pic\comic\42303779\9\5.jpg" />
+    <Content Include="pic\comic\42303779\9\6.jpg" />
+    <Content Include="pic\comic\42303779\9\7.jpg" />
+    <Content Include="pic\comic\42573628\42573628.jpg" />
+    <Content Include="pic\comic\42599751\42599751.jpg" />
+    <Content Include="pic\comic\42814169\42814169.jpg" />
+    <Content Include="pic\comic\43980230\43980230.jpg" />
+    <Content Include="pic\comic\47035550\47035550.jpg" />
+    <Content Include="pic\comic\5000606\1\1.jpg" />
+    <Content Include="pic\comic\5000606\1\2.jpg" />
+    <Content Include="pic\comic\5000606\2\1.jpg" />
+    <Content Include="pic\comic\5000606\2\10.jpg" />
+    <Content Include="pic\comic\5000606\2\100.jpg" />
+    <Content Include="pic\comic\5000606\2\101.jpg" />
+    <Content Include="pic\comic\5000606\2\102.jpg" />
+    <Content Include="pic\comic\5000606\2\103.jpg" />
+    <Content Include="pic\comic\5000606\2\104.jpg" />
+    <Content Include="pic\comic\5000606\2\105.jpg" />
+    <Content Include="pic\comic\5000606\2\106.jpg" />
+    <Content Include="pic\comic\5000606\2\107.jpg" />
+    <Content Include="pic\comic\5000606\2\108.jpg" />
+    <Content Include="pic\comic\5000606\2\109.jpg" />
+    <Content Include="pic\comic\5000606\2\11.jpg" />
+    <Content Include="pic\comic\5000606\2\110.jpg" />
+    <Content Include="pic\comic\5000606\2\111.jpg" />
+    <Content Include="pic\comic\5000606\2\112.jpg" />
+    <Content Include="pic\comic\5000606\2\113.jpg" />
+    <Content Include="pic\comic\5000606\2\114.jpg" />
+    <Content Include="pic\comic\5000606\2\115.jpg" />
+    <Content Include="pic\comic\5000606\2\116.jpg" />
+    <Content Include="pic\comic\5000606\2\117.jpg" />
+    <Content Include="pic\comic\5000606\2\118.jpg" />
+    <Content Include="pic\comic\5000606\2\119.jpg" />
+    <Content Include="pic\comic\5000606\2\12.jpg" />
+    <Content Include="pic\comic\5000606\2\120.jpg" />
+    <Content Include="pic\comic\5000606\2\121.jpg" />
+    <Content Include="pic\comic\5000606\2\122.jpg" />
+    <Content Include="pic\comic\5000606\2\123.jpg" />
+    <Content Include="pic\comic\5000606\2\124.jpg" />
+    <Content Include="pic\comic\5000606\2\125.jpg" />
+    <Content Include="pic\comic\5000606\2\126.jpg" />
+    <Content Include="pic\comic\5000606\2\127.jpg" />
+    <Content Include="pic\comic\5000606\2\128.jpg" />
+    <Content Include="pic\comic\5000606\2\129.jpg" />
+    <Content Include="pic\comic\5000606\2\13.jpg" />
+    <Content Include="pic\comic\5000606\2\130.jpg" />
+    <Content Include="pic\comic\5000606\2\131.jpg" />
+    <Content Include="pic\comic\5000606\2\132.jpg" />
+    <Content Include="pic\comic\5000606\2\133.jpg" />
+    <Content Include="pic\comic\5000606\2\134.jpg" />
+    <Content Include="pic\comic\5000606\2\135.jpg" />
+    <Content Include="pic\comic\5000606\2\136.jpg" />
+    <Content Include="pic\comic\5000606\2\137.jpg" />
+    <Content Include="pic\comic\5000606\2\138.jpg" />
+    <Content Include="pic\comic\5000606\2\139.jpg" />
+    <Content Include="pic\comic\5000606\2\14.jpg" />
+    <Content Include="pic\comic\5000606\2\140.jpg" />
+    <Content Include="pic\comic\5000606\2\141.jpg" />
+    <Content Include="pic\comic\5000606\2\142.jpg" />
+    <Content Include="pic\comic\5000606\2\143.jpg" />
+    <Content Include="pic\comic\5000606\2\144.jpg" />
+    <Content Include="pic\comic\5000606\2\145.jpg" />
+    <Content Include="pic\comic\5000606\2\146.jpg" />
+    <Content Include="pic\comic\5000606\2\147.jpg" />
+    <Content Include="pic\comic\5000606\2\148.jpg" />
+    <Content Include="pic\comic\5000606\2\149.jpg" />
+    <Content Include="pic\comic\5000606\2\15.jpg" />
+    <Content Include="pic\comic\5000606\2\150.jpg" />
+    <Content Include="pic\comic\5000606\2\151.jpg" />
+    <Content Include="pic\comic\5000606\2\152.jpg" />
+    <Content Include="pic\comic\5000606\2\153.jpg" />
+    <Content Include="pic\comic\5000606\2\154.jpg" />
+    <Content Include="pic\comic\5000606\2\155.jpg" />
+    <Content Include="pic\comic\5000606\2\156.jpg" />
+    <Content Include="pic\comic\5000606\2\157.jpg" />
+    <Content Include="pic\comic\5000606\2\158.jpg" />
+    <Content Include="pic\comic\5000606\2\159.jpg" />
+    <Content Include="pic\comic\5000606\2\16.jpg" />
+    <Content Include="pic\comic\5000606\2\160.jpg" />
+    <Content Include="pic\comic\5000606\2\161.jpg" />
+    <Content Include="pic\comic\5000606\2\162.jpg" />
+    <Content Include="pic\comic\5000606\2\163.jpg" />
+    <Content Include="pic\comic\5000606\2\164.jpg" />
+    <Content Include="pic\comic\5000606\2\165.jpg" />
+    <Content Include="pic\comic\5000606\2\166.jpg" />
+    <Content Include="pic\comic\5000606\2\167.jpg" />
+    <Content Include="pic\comic\5000606\2\168.jpg" />
+    <Content Include="pic\comic\5000606\2\169.jpg" />
+    <Content Include="pic\comic\5000606\2\17.jpg" />
+    <Content Include="pic\comic\5000606\2\170.jpg" />
+    <Content Include="pic\comic\5000606\2\171.jpg" />
+    <Content Include="pic\comic\5000606\2\172.jpg" />
+    <Content Include="pic\comic\5000606\2\173.jpg" />
+    <Content Include="pic\comic\5000606\2\174.jpg" />
+    <Content Include="pic\comic\5000606\2\175.jpg" />
+    <Content Include="pic\comic\5000606\2\176.jpg" />
+    <Content Include="pic\comic\5000606\2\177.jpg" />
+    <Content Include="pic\comic\5000606\2\178.jpg" />
+    <Content Include="pic\comic\5000606\2\179.jpg" />
+    <Content Include="pic\comic\5000606\2\18.jpg" />
+    <Content Include="pic\comic\5000606\2\180.jpg" />
+    <Content Include="pic\comic\5000606\2\181.jpg" />
+    <Content Include="pic\comic\5000606\2\182.jpg" />
+    <Content Include="pic\comic\5000606\2\183.jpg" />
+    <Content Include="pic\comic\5000606\2\184.jpg" />
+    <Content Include="pic\comic\5000606\2\185.jpg" />
+    <Content Include="pic\comic\5000606\2\186.jpg" />
+    <Content Include="pic\comic\5000606\2\187.jpg" />
+    <Content Include="pic\comic\5000606\2\188.jpg" />
+    <Content Include="pic\comic\5000606\2\189.jpg" />
+    <Content Include="pic\comic\5000606\2\19.jpg" />
+    <Content Include="pic\comic\5000606\2\190.jpg" />
+    <Content Include="pic\comic\5000606\2\191.jpg" />
+    <Content Include="pic\comic\5000606\2\192.jpg" />
+    <Content Include="pic\comic\5000606\2\193.jpg" />
+    <Content Include="pic\comic\5000606\2\194.jpg" />
+    <Content Include="pic\comic\5000606\2\195.jpg" />
+    <Content Include="pic\comic\5000606\2\196.jpg" />
+    <Content Include="pic\comic\5000606\2\197.jpg" />
+    <Content Include="pic\comic\5000606\2\198.jpg" />
+    <Content Include="pic\comic\5000606\2\199.jpg" />
+    <Content Include="pic\comic\5000606\2\2.jpg" />
+    <Content Include="pic\comic\5000606\2\20.jpg" />
+    <Content Include="pic\comic\5000606\2\200.jpg" />
+    <Content Include="pic\comic\5000606\2\201.jpg" />
+    <Content Include="pic\comic\5000606\2\202.jpg" />
+    <Content Include="pic\comic\5000606\2\203.jpg" />
+    <Content Include="pic\comic\5000606\2\204.jpg" />
+    <Content Include="pic\comic\5000606\2\205.jpg" />
+    <Content Include="pic\comic\5000606\2\206.jpg" />
+    <Content Include="pic\comic\5000606\2\207.jpg" />
+    <Content Include="pic\comic\5000606\2\208.jpg" />
+    <Content Include="pic\comic\5000606\2\209.jpg" />
+    <Content Include="pic\comic\5000606\2\21.jpg" />
+    <Content Include="pic\comic\5000606\2\210.jpg" />
+    <Content Include="pic\comic\5000606\2\211.jpg" />
+    <Content Include="pic\comic\5000606\2\212.jpg" />
+    <Content Include="pic\comic\5000606\2\213.jpg" />
+    <Content Include="pic\comic\5000606\2\214.jpg" />
+    <Content Include="pic\comic\5000606\2\215.jpg" />
+    <Content Include="pic\comic\5000606\2\216.jpg" />
+    <Content Include="pic\comic\5000606\2\217.jpg" />
+    <Content Include="pic\comic\5000606\2\218.jpg" />
+    <Content Include="pic\comic\5000606\2\219.jpg" />
+    <Content Include="pic\comic\5000606\2\22.jpg" />
+    <Content Include="pic\comic\5000606\2\220.jpg" />
+    <Content Include="pic\comic\5000606\2\221.jpg" />
+    <Content Include="pic\comic\5000606\2\222.jpg" />
+    <Content Include="pic\comic\5000606\2\223.jpg" />
+    <Content Include="pic\comic\5000606\2\224.jpg" />
+    <Content Include="pic\comic\5000606\2\225.jpg" />
+    <Content Include="pic\comic\5000606\2\226.jpg" />
+    <Content Include="pic\comic\5000606\2\227.jpg" />
+    <Content Include="pic\comic\5000606\2\228.jpg" />
+    <Content Include="pic\comic\5000606\2\229.jpg" />
+    <Content Include="pic\comic\5000606\2\23.jpg" />
+    <Content Include="pic\comic\5000606\2\230.jpg" />
+    <Content Include="pic\comic\5000606\2\231.jpg" />
+    <Content Include="pic\comic\5000606\2\232.jpg" />
+    <Content Include="pic\comic\5000606\2\233.jpg" />
+    <Content Include="pic\comic\5000606\2\234.jpg" />
+    <Content Include="pic\comic\5000606\2\235.jpg" />
+    <Content Include="pic\comic\5000606\2\236.jpg" />
+    <Content Include="pic\comic\5000606\2\237.jpg" />
+    <Content Include="pic\comic\5000606\2\238.jpg" />
+    <Content Include="pic\comic\5000606\2\239.jpg" />
+    <Content Include="pic\comic\5000606\2\24.jpg" />
+    <Content Include="pic\comic\5000606\2\240.jpg" />
+    <Content Include="pic\comic\5000606\2\241.jpg" />
+    <Content Include="pic\comic\5000606\2\242.jpg" />
+    <Content Include="pic\comic\5000606\2\243.jpg" />
+    <Content Include="pic\comic\5000606\2\244.jpg" />
+    <Content Include="pic\comic\5000606\2\245.jpg" />
+    <Content Include="pic\comic\5000606\2\246.jpg" />
+    <Content Include="pic\comic\5000606\2\247.jpg" />
+    <Content Include="pic\comic\5000606\2\248.jpg" />
+    <Content Include="pic\comic\5000606\2\249.jpg" />
+    <Content Include="pic\comic\5000606\2\25.jpg" />
+    <Content Include="pic\comic\5000606\2\250.jpg" />
+    <Content Include="pic\comic\5000606\2\251.jpg" />
+    <Content Include="pic\comic\5000606\2\252.jpg" />
+    <Content Include="pic\comic\5000606\2\253.jpg" />
+    <Content Include="pic\comic\5000606\2\254.jpg" />
+    <Content Include="pic\comic\5000606\2\255.jpg" />
+    <Content Include="pic\comic\5000606\2\256.jpg" />
+    <Content Include="pic\comic\5000606\2\257.jpg" />
+    <Content Include="pic\comic\5000606\2\258.jpg" />
+    <Content Include="pic\comic\5000606\2\259.jpg" />
+    <Content Include="pic\comic\5000606\2\26.jpg" />
+    <Content Include="pic\comic\5000606\2\260.jpg" />
+    <Content Include="pic\comic\5000606\2\261.jpg" />
+    <Content Include="pic\comic\5000606\2\262.jpg" />
+    <Content Include="pic\comic\5000606\2\263.jpg" />
+    <Content Include="pic\comic\5000606\2\264.jpg" />
+    <Content Include="pic\comic\5000606\2\265.jpg" />
+    <Content Include="pic\comic\5000606\2\266.jpg" />
+    <Content Include="pic\comic\5000606\2\267.jpg" />
+    <Content Include="pic\comic\5000606\2\268.jpg" />
+    <Content Include="pic\comic\5000606\2\269.jpg" />
+    <Content Include="pic\comic\5000606\2\27.jpg" />
+    <Content Include="pic\comic\5000606\2\270.jpg" />
+    <Content Include="pic\comic\5000606\2\271.jpg" />
+    <Content Include="pic\comic\5000606\2\272.jpg" />
+    <Content Include="pic\comic\5000606\2\273.jpg" />
+    <Content Include="pic\comic\5000606\2\274.jpg" />
+    <Content Include="pic\comic\5000606\2\275.jpg" />
+    <Content Include="pic\comic\5000606\2\276.jpg" />
+    <Content Include="pic\comic\5000606\2\277.jpg" />
+    <Content Include="pic\comic\5000606\2\278.jpg" />
+    <Content Include="pic\comic\5000606\2\279.jpg" />
+    <Content Include="pic\comic\5000606\2\28.jpg" />
+    <Content Include="pic\comic\5000606\2\280.jpg" />
+    <Content Include="pic\comic\5000606\2\281.jpg" />
+    <Content Include="pic\comic\5000606\2\282.jpg" />
+    <Content Include="pic\comic\5000606\2\283.jpg" />
+    <Content Include="pic\comic\5000606\2\284.jpg" />
+    <Content Include="pic\comic\5000606\2\285.jpg" />
+    <Content Include="pic\comic\5000606\2\286.jpg" />
+    <Content Include="pic\comic\5000606\2\287.jpg" />
+    <Content Include="pic\comic\5000606\2\288.jpg" />
+    <Content Include="pic\comic\5000606\2\289.jpg" />
+    <Content Include="pic\comic\5000606\2\29.jpg" />
+    <Content Include="pic\comic\5000606\2\290.jpg" />
+    <Content Include="pic\comic\5000606\2\291.jpg" />
+    <Content Include="pic\comic\5000606\2\292.jpg" />
+    <Content Include="pic\comic\5000606\2\293.jpg" />
+    <Content Include="pic\comic\5000606\2\294.jpg" />
+    <Content Include="pic\comic\5000606\2\295.jpg" />
+    <Content Include="pic\comic\5000606\2\296.jpg" />
+    <Content Include="pic\comic\5000606\2\297.jpg" />
+    <Content Include="pic\comic\5000606\2\298.jpg" />
+    <Content Include="pic\comic\5000606\2\299.jpg" />
+    <Content Include="pic\comic\5000606\2\3.jpg" />
+    <Content Include="pic\comic\5000606\2\30.jpg" />
+    <Content Include="pic\comic\5000606\2\300.jpg" />
+    <Content Include="pic\comic\5000606\2\301.jpg" />
+    <Content Include="pic\comic\5000606\2\302.jpg" />
+    <Content Include="pic\comic\5000606\2\303.jpg" />
+    <Content Include="pic\comic\5000606\2\304.jpg" />
+    <Content Include="pic\comic\5000606\2\305.jpg" />
+    <Content Include="pic\comic\5000606\2\306.jpg" />
+    <Content Include="pic\comic\5000606\2\307.jpg" />
+    <Content Include="pic\comic\5000606\2\308.jpg" />
+    <Content Include="pic\comic\5000606\2\309.jpg" />
+    <Content Include="pic\comic\5000606\2\31.jpg" />
+    <Content Include="pic\comic\5000606\2\310.jpg" />
+    <Content Include="pic\comic\5000606\2\311.jpg" />
+    <Content Include="pic\comic\5000606\2\312.jpg" />
+    <Content Include="pic\comic\5000606\2\313.jpg" />
+    <Content Include="pic\comic\5000606\2\314.jpg" />
+    <Content Include="pic\comic\5000606\2\315.jpg" />
+    <Content Include="pic\comic\5000606\2\316.jpg" />
+    <Content Include="pic\comic\5000606\2\317.jpg" />
+    <Content Include="pic\comic\5000606\2\318.jpg" />
+    <Content Include="pic\comic\5000606\2\319.jpg" />
+    <Content Include="pic\comic\5000606\2\32.jpg" />
+    <Content Include="pic\comic\5000606\2\320.jpg" />
+    <Content Include="pic\comic\5000606\2\321.jpg" />
+    <Content Include="pic\comic\5000606\2\322.jpg" />
+    <Content Include="pic\comic\5000606\2\323.jpg" />
+    <Content Include="pic\comic\5000606\2\324.jpg" />
+    <Content Include="pic\comic\5000606\2\325.jpg" />
+    <Content Include="pic\comic\5000606\2\326.jpg" />
+    <Content Include="pic\comic\5000606\2\327.jpg" />
+    <Content Include="pic\comic\5000606\2\328.jpg" />
+    <Content Include="pic\comic\5000606\2\329.jpg" />
+    <Content Include="pic\comic\5000606\2\33.jpg" />
+    <Content Include="pic\comic\5000606\2\330.jpg" />
+    <Content Include="pic\comic\5000606\2\34.jpg" />
+    <Content Include="pic\comic\5000606\2\35.jpg" />
+    <Content Include="pic\comic\5000606\2\36.jpg" />
+    <Content Include="pic\comic\5000606\2\37.jpg" />
+    <Content Include="pic\comic\5000606\2\38.jpg" />
+    <Content Include="pic\comic\5000606\2\39.jpg" />
+    <Content Include="pic\comic\5000606\2\4.jpg" />
+    <Content Include="pic\comic\5000606\2\40.jpg" />
+    <Content Include="pic\comic\5000606\2\41.jpg" />
+    <Content Include="pic\comic\5000606\2\42.jpg" />
+    <Content Include="pic\comic\5000606\2\43.jpg" />
+    <Content Include="pic\comic\5000606\2\44.jpg" />
+    <Content Include="pic\comic\5000606\2\45.jpg" />
+    <Content Include="pic\comic\5000606\2\46.jpg" />
+    <Content Include="pic\comic\5000606\2\47.jpg" />
+    <Content Include="pic\comic\5000606\2\48.jpg" />
+    <Content Include="pic\comic\5000606\2\49.jpg" />
+    <Content Include="pic\comic\5000606\2\5.jpg" />
+    <Content Include="pic\comic\5000606\2\50.jpg" />
+    <Content Include="pic\comic\5000606\2\51.jpg" />
+    <Content Include="pic\comic\5000606\2\52.jpg" />
+    <Content Include="pic\comic\5000606\2\53.jpg" />
+    <Content Include="pic\comic\5000606\2\54.jpg" />
+    <Content Include="pic\comic\5000606\2\55.jpg" />
+    <Content Include="pic\comic\5000606\2\56.jpg" />
+    <Content Include="pic\comic\5000606\2\57.jpg" />
+    <Content Include="pic\comic\5000606\2\58.jpg" />
+    <Content Include="pic\comic\5000606\2\59.jpg" />
+    <Content Include="pic\comic\5000606\2\6.jpg" />
+    <Content Include="pic\comic\5000606\2\60.jpg" />
+    <Content Include="pic\comic\5000606\2\61.jpg" />
+    <Content Include="pic\comic\5000606\2\62.jpg" />
+    <Content Include="pic\comic\5000606\2\63.jpg" />
+    <Content Include="pic\comic\5000606\2\64.jpg" />
+    <Content Include="pic\comic\5000606\2\65.jpg" />
+    <Content Include="pic\comic\5000606\2\66.jpg" />
+    <Content Include="pic\comic\5000606\2\67.jpg" />
+    <Content Include="pic\comic\5000606\2\68.jpg" />
+    <Content Include="pic\comic\5000606\2\69.jpg" />
+    <Content Include="pic\comic\5000606\2\7.jpg" />
+    <Content Include="pic\comic\5000606\2\70.jpg" />
+    <Content Include="pic\comic\5000606\2\71.jpg" />
+    <Content Include="pic\comic\5000606\2\72.jpg" />
+    <Content Include="pic\comic\5000606\2\73.jpg" />
+    <Content Include="pic\comic\5000606\2\74.jpg" />
+    <Content Include="pic\comic\5000606\2\75.jpg" />
+    <Content Include="pic\comic\5000606\2\76.jpg" />
+    <Content Include="pic\comic\5000606\2\77.jpg" />
+    <Content Include="pic\comic\5000606\2\78.jpg" />
+    <Content Include="pic\comic\5000606\2\79.jpg" />
+    <Content Include="pic\comic\5000606\2\8.jpg" />
+    <Content Include="pic\comic\5000606\2\80.jpg" />
+    <Content Include="pic\comic\5000606\2\81.jpg" />
+    <Content Include="pic\comic\5000606\2\82.jpg" />
+    <Content Include="pic\comic\5000606\2\83.jpg" />
+    <Content Include="pic\comic\5000606\2\84.jpg" />
+    <Content Include="pic\comic\5000606\2\85.jpg" />
+    <Content Include="pic\comic\5000606\2\86.jpg" />
+    <Content Include="pic\comic\5000606\2\87.jpg" />
+    <Content Include="pic\comic\5000606\2\88.jpg" />
+    <Content Include="pic\comic\5000606\2\89.jpg" />
+    <Content Include="pic\comic\5000606\2\9.jpg" />
+    <Content Include="pic\comic\5000606\2\90.jpg" />
+    <Content Include="pic\comic\5000606\2\91.jpg" />
+    <Content Include="pic\comic\5000606\2\92.jpg" />
+    <Content Include="pic\comic\5000606\2\93.jpg" />
+    <Content Include="pic\comic\5000606\2\94.jpg" />
+    <Content Include="pic\comic\5000606\2\95.jpg" />
+    <Content Include="pic\comic\5000606\2\96.jpg" />
+    <Content Include="pic\comic\5000606\2\97.jpg" />
+    <Content Include="pic\comic\5000606\2\98.jpg" />
+    <Content Include="pic\comic\5000606\2\99.jpg" />
+    <Content Include="pic\comic\5000606\5000606.jpg" />
+    <Content Include="pic\comic\54326329\54326329.jpg" />
+    <Content Include="pic\comic\54832118\54832118.jpg" />
+    <Content Include="pic\comic\59514511\59514511.jpg" />
+    <Content Include="pic\comic\60516968\60516968.jpg" />
+    <Content Include="pic\comic\61483598\61483598.jpg" />
+    <Content Include="pic\comic\62617178\62617178.jpg" />
+    <Content Include="pic\comic\672697\672697.jpg" />
+    <Content Include="pic\comic\67362763\67362763.jpg" />
+    <Content Include="pic\comic\67560563\67560563.jpg" />
+    <Content Include="pic\comic\68038368\68038368.jpg" />
+    <Content Include="pic\comic\69370748\69370748.jpg" />
+    <Content Include="pic\comic\69828632\69828632.jpg" />
+    <Content Include="pic\comic\73158403\73158403.jpg" />
+    <Content Include="pic\comic\73317805\73317805.jpg" />
+    <Content Include="pic\comic\74820412\74820412.jpg" />
+    <Content Include="pic\comic\76802890\76802890.jpg" />
+    <Content Include="pic\comic\76966493\76966493.jpg" />
+    <Content Include="pic\comic\78877641\78877641.jpg" />
+    <Content Include="pic\comic\80039362\1\1.jpg" />
+    <Content Include="pic\comic\80039362\1\10.jpg" />
+    <Content Include="pic\comic\80039362\1\2.jpg" />
+    <Content Include="pic\comic\80039362\1\3.jpg" />
+    <Content Include="pic\comic\80039362\1\4.jpg" />
+    <Content Include="pic\comic\80039362\1\5.jpg" />
+    <Content Include="pic\comic\80039362\1\6.jpg" />
+    <Content Include="pic\comic\80039362\1\7.jpg" />
+    <Content Include="pic\comic\80039362\1\8.jpg" />
+    <Content Include="pic\comic\80039362\1\9.jpg" />
+    <Content Include="pic\comic\80039362\2\1.jpg" />
+    <Content Include="pic\comic\80039362\2\10.jpg" />
+    <Content Include="pic\comic\80039362\2\2.jpg" />
+    <Content Include="pic\comic\80039362\2\3.jpg" />
+    <Content Include="pic\comic\80039362\2\4.jpg" />
+    <Content Include="pic\comic\80039362\2\5.jpg" />
+    <Content Include="pic\comic\80039362\2\6.jpg" />
+    <Content Include="pic\comic\80039362\2\7.jpg" />
+    <Content Include="pic\comic\80039362\2\8.jpg" />
+    <Content Include="pic\comic\80039362\2\9.jpg" />
+    <Content Include="pic\comic\80039362\3\1.jpg" />
+    <Content Include="pic\comic\80039362\3\10.jpg" />
+    <Content Include="pic\comic\80039362\3\2.jpg" />
+    <Content Include="pic\comic\80039362\3\3.jpg" />
+    <Content Include="pic\comic\80039362\3\4.jpg" />
+    <Content Include="pic\comic\80039362\3\5.jpg" />
+    <Content Include="pic\comic\80039362\3\6.jpg" />
+    <Content Include="pic\comic\80039362\3\7.jpg" />
+    <Content Include="pic\comic\80039362\3\8.jpg" />
+    <Content Include="pic\comic\80039362\3\9.jpg" />
+    <Content Include="pic\comic\80039362\4\1.jpg" />
+    <Content Include="pic\comic\80039362\4\10.jpg" />
+    <Content Include="pic\comic\80039362\4\2.jpg" />
+    <Content Include="pic\comic\80039362\4\3.jpg" />
+    <Content Include="pic\comic\80039362\4\4.jpg" />
+    <Content Include="pic\comic\80039362\4\5.jpg" />
+    <Content Include="pic\comic\80039362\4\6.jpg" />
+    <Content Include="pic\comic\80039362\4\7.jpg" />
+    <Content Include="pic\comic\80039362\4\8.jpg" />
+    <Content Include="pic\comic\80039362\4\9.jpg" />
+    <Content Include="pic\comic\80039362\5\1.jpg" />
+    <Content Include="pic\comic\80039362\5\10.jpg" />
+    <Content Include="pic\comic\80039362\5\2.jpg" />
+    <Content Include="pic\comic\80039362\5\3.jpg" />
+    <Content Include="pic\comic\80039362\5\4.jpg" />
+    <Content Include="pic\comic\80039362\5\5.jpg" />
+    <Content Include="pic\comic\80039362\5\6.jpg" />
+    <Content Include="pic\comic\80039362\5\7.jpg" />
+    <Content Include="pic\comic\80039362\5\8.jpg" />
+    <Content Include="pic\comic\80039362\5\9.jpg" />
+    <Content Include="pic\comic\80039362\80039362.jpg" />
+    <Content Include="pic\comic\8162048\8162048.jpg" />
+    <Content Include="pic\comic\82252554\82252554.jpg" />
+    <Content Include="pic\comic\82604318\82604318.jpg" />
+    <Content Include="pic\comic\83584614\83584614.jpg" />
+    <Content Include="pic\comic\85900089\85900089.jpg" />
+    <Content Include="pic\comic\89516502\89516502.jpg" />
+    <Content Include="pic\comic\89879947\89879947.jpg" />
+    <Content Include="pic\comic\91526097\91526097.jpg" />
+    <Content Include="pic\comic\92540449\92540449.jpg" />
+    <Content Include="pic\comic\92914740\92914740.jpg" />
+    <Content Include="pic\comic\93661332\93661332.jpg" />
+    <Content Include="pic\comic\94988153\94988153.jpg" />
+    <Content Include="pic\comic\95839497\95839497.jpg" />
+    <Content Include="pic\comic\98988572\1\1.jpg" />
+    <Content Include="pic\comic\98988572\1\2.jpg" />
+    <Content Include="pic\comic\98988572\1\3.jpg" />
+    <Content Include="pic\comic\98988572\1\4.jpg" />
+    <Content Include="pic\comic\98988572\1\5.jpg" />
+    <Content Include="pic\comic\98988572\98988572.jpg" />
+    <Content Include="pic\logo_Picture\anime_logo_png_44286_AzE_icon.ico" />
+    <Content Include="pic\profile\1870955.jpg" />
+    <Content Include="pic\profile\2384586.jpg" />
+    <Content Include="pic\profile\2710061.jpg" />
+    <Content Include="pic\profile\2996624.jpg" />
+    <Content Include="pic\profile\3126772.jpg" />
+    <Content Include="pic\profile\428169.jpg" />
+    <Content Include="pic\profile\4449603.jpg" />
+    <Content Include="pic\profile\451843.jpg" />
+    <Content Include="pic\profile\4853653.jpg" />
+    <Content Include="pic\profile\725445.jpg" />
+    <Content Include="pic\profile\75201.jpg" />
+    <Content Include="pic\profile\7757276.jpg" />
+    <Content Include="pic\profile\8017927.jpg" />
+    <Content Include="pic\profile\8736733.jpg" />
+    <Content Include="pic\slideshow\5032826.jpg" />
+    <Content Include="pic\slideshow\5888715.jpg" />
+    <Content Include="pic\slideshow\7450360.jpg" />
+    <Content Include="pic\system\background.jpg" />
+    <Content Include="pic\system\comicInfo.jpg" />
+    <Content Include="pic\system\comicInfo2.jpg" />
+    <Content Include="pic\system\female.jpg" />
+    <Content Include="pic\system\male.jpg" />
+    <Content Include="pic\system\star.png" />
+    <Content Include="Properties\PublishProfiles\FolderProfile.pubxml.user" />
+    <Content Include="Properties\PublishProfiles\FolderProfile1.pubxml.user" />
+    <Content Include="reader\EditProfile.aspx" />
+    <Content Include="reader\PaymentHistory.aspx" />
+    <Content Include="reader\Payment\ChoiceCoP.aspx" />
+    <Content Include="reader\Payment\CreditCard.aspx" />
+    <Content Include="reader\Payment\PaymentSuccess.aspx" />
+    <Content Include="reader\Payment\paypal.png" />
+    <Content Include="reader\Payment\ProcessPayment.aspx" />
+    <Content Include="RegisterSucess.aspx" />
+    <Content Include="search.aspx" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ViewEpisode.aspx" />
+    <Content Include="Vip.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminRegister.aspx.cs">
+      <DependentUpon>AdminRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminRegister.aspx.designer.cs">
+      <DependentUpon>AdminRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ban.aspx.cs">
+      <DependentUpon>ban.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ban.aspx.designer.cs">
+      <DependentUpon>ban.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\banCC.aspx.cs">
+      <DependentUpon>banCC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\banCC.aspx.designer.cs">
+      <DependentUpon>banCC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PaymentHistoryAll.aspx.cs">
+      <DependentUpon>PaymentHistoryAll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PaymentHistoryAll.aspx.designer.cs">
+      <DependentUpon>PaymentHistoryAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UnverifyComicList.aspx.cs">
+      <DependentUpon>UnverifyComicList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UnverifyComicList.aspx.designer.cs">
+      <DependentUpon>UnverifyComicList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UploadSlideShow.aspx.cs">
+      <DependentUpon>UploadSlideShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UploadSlideShow.aspx.designer.cs">
+      <DependentUpon>UploadSlideShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\choiceone.aspx.cs">
+      <DependentUpon>choiceone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\choiceone.aspx.designer.cs">
+      <DependentUpon>choiceone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\forgetPassword.aspx.cs">
+      <DependentUpon>forgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\forgetPassword.aspx.designer.cs">
+      <DependentUpon>forgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication\registerComic.aspx.cs">
+      <DependentUpon>registerComic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Authentication\registerComic.aspx.designer.cs">
+      <DependentUpon>registerComic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Email.cs" />
+    <Compile Include="Classes\GoPay.cs" />
+    <Compile Include="Classes\QrCode.cs" />
+    <Compile Include="Classes\ReCaptchaClass.cs" />
+    <Compile Include="Classes\RecaptchaClass3.cs" />
+    <Compile Include="Classes\SimpleImage.cs" />
+    <Compile Include="Classes\Validation.cs" />
+    <Compile Include="Comic.aspx.cs">
+      <DependentUpon>Comic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comic.aspx.designer.cs">
+      <DependentUpon>Comic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="comicCreator\AddComic.aspx.cs">
+      <DependentUpon>AddComic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comicCreator\AddComic.aspx.designer.cs">
+      <DependentUpon>AddComic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="comicCreator\AddEpisode.aspx.cs">
+      <DependentUpon>AddEpisode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comicCreator\AddEpisode.aspx.designer.cs">
+      <DependentUpon>AddEpisode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="comicCreator\editProfile.aspx.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comicCreator\editProfile.aspx.designer.cs">
+      <DependentUpon>editProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="comicCreator\UpdateComicInfo.aspx.cs">
+      <DependentUpon>UpdateComicInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comicCreator\UpdateComicInfo.aspx.designer.cs">
+      <DependentUpon>UpdateComicInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="comicCreator\UpdateEpisode.aspx.cs">
+      <DependentUpon>UpdateEpisode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="comicCreator\UpdateEpisode.aspx.designer.cs">
+      <DependentUpon>UpdateEpisode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses11.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayComic.aspx.cs">
+      <DependentUpon>DisplayComic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DisplayComic.aspx.designer.cs">
+      <DependentUpon>DisplayComic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reader\FavouriteList.aspx.cs">
+      <DependentUpon>FavouriteList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reader\FavouriteList.aspx.designer.cs">
+      <DependentUpon>FavouriteList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="masterPage.Master.cs">
+      <DependentUpon>masterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masterPage.Master.designer.cs">
+      <DependentUpon>masterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reader\EditProfile.aspx.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reader\EditProfile.aspx.designer.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reader\PaymentHistory.aspx.cs">
+      <DependentUpon>PaymentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reader\PaymentHistory.aspx.designer.cs">
+      <DependentUpon>PaymentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reader\Payment\ChoiceCoP.aspx.cs">
+      <DependentUpon>ChoiceCoP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reader\Payment\ChoiceCoP.aspx.designer.cs">
+      <DependentUpon>ChoiceCoP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reader\Payment\CreditCard.aspx.cs">
+      <DependentUpon>CreditCard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reader\Payment\CreditCard.aspx.designer.cs">
+      <DependentUpon>CreditCard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reader\Payment\PaymentSuccess.aspx.cs">
+      <DependentUpon>PaymentSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reader\Payment\PaymentSuccess.aspx.designer.cs">
+      <DependentUpon>PaymentSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reader\Payment\ProcessPayment.aspx.cs">
+      <DependentUpon>ProcessPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reader\Payment\ProcessPayment.aspx.designer.cs">
+      <DependentUpon>ProcessPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterSucess.aspx.cs">
+      <DependentUpon>RegisterSucess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterSucess.aspx.designer.cs">
+      <DependentUpon>RegisterSucess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ViewEpisode.aspx.cs">
+      <DependentUpon>ViewEpisode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewEpisode.aspx.designer.cs">
+      <DependentUpon>ViewEpisode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vip.aspx.cs">
+      <DependentUpon>Vip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vip.aspx.designer.cs">
+      <DependentUpon>Vip.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="masterPage.Master" />
+    <Content Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses11.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="comicCreator\Web.config" />
+    <Content Include="Admin\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <Content Include="reader\Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data1\tooltips\" />
+    <Folder Include="logo_Picture\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57613</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57613/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

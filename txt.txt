@@ -1,0 +1,31 @@
+if (!string.IsNullOrEmpty(fuImage.FileContent.ToString()))
+                {
+                    if (gender == "M")
+                    {
+                        string fileName = "male.jpg";
+                        //string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
+                        //string destFile = System.IO.Path.Combine(destPath, fileName);
+                        string oldFileName = sourcePath + fileName;
+                        string newFileName = destPath + randomId + ".jpg";
+                        File.Copy(oldFileName, newFileName);
+
+                        //System.IO.File.Copy(sourceFile, destFile, false);
+
+                    }
+                    else
+                    {
+                        string fileName = "female.jpg";
+                        //string sourceFile = System.IO.Path.Combine(sourcePath, fileName);
+                        //string destFile = System.IO.Path.Combine(destPath, fileName);
+
+                        string oldFileName = sourcePath + fileName;
+                        string newFileName = destPath + randomId + ".jpg";
+                        File.Copy(oldFileName, newFileName);
+                        //System.IO.File.Copy(sourceFile, destFile, false);
+                    }
+                }
+                else
+                {
+                    var img = new SimpleImage(fuImage.FileContent);
+                    img.SaveAs(path + randomId + ".jpg");
+                }

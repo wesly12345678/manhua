@@ -1,0 +1,14 @@
+<asp:CheckBoxList ID="cblCategory" runat="server">
+                    <asp:ListItem Value="Ad">Adventure</asp:ListItem>
+                    <asp:ListItem Value="Ho">Horrible</asp:ListItem>
+                    <asp:ListItem Value="Sc">School</asp:ListItem>
+                    <asp:ListItem Value="Lo">Love</asp:ListItem>
+                    <asp:ListItem Value="Wa">War</asp:ListItem>
+                    <asp:ListItem Value="Hi">History</asp:ListItem>
+                    <asp:ListItem Value="Sp">Sport</asp:ListItem>
+                    <asp:ListItem Value="Co">Comedy</asp:ListItem>
+                    <asp:ListItem Value="Child">Children</asp:ListItem>
+                    <asp:ListItem Value="Ma">Magic</asp:ListItem>
+                    <asp:ListItem Value="Sc">Science</asp:ListItem>
+                    <asp:ListItem Value="Su">Suspense</asp:ListItem>
+            </asp:CheckBoxList>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Admin" Member="admins">
+    <Type Name="admin">
+      <Column Name="A_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="A_Nickname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="A_hash" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="A_email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="A_gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="A_status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="A_register_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.slideshow" Member="slideshows">
+    <Type Name="slideshow">
+      <Column Name="S_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="S_Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="S_link" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Categories">
+    <Type Name="Category">
+      <Column Name="[Ca.Id]" Member="Ca_Id" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Ca.Name]" Member="Ca_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Comic" Member="Comics" ThisKey="Ca_Id" OtherKey="C_category" Type="Comic" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComicCreator" Member="ComicCreators">
+    <Type Name="ComicCreator">
+      <Column Name="CC_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CC_NickName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CC_hash" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CC_email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CC_birth_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CC_phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="CC_gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CC_isvip" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CC_BanStatus" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CC_register_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CC_EmailVerify" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="ComicCreator_Comic" Member="Comics" ThisKey="CC_Id" OtherKey="CC_Id" Type="Comic" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Favourite" Member="Favourites">
+    <Type Name="Favourite">
+      <Column Name="R_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="C_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="readers_Favourite" Member="readers" ThisKey="R_Id" OtherKey="R_Id" Type="readers" IsForeignKey="true" />
+      <Association Name="Comic_Favourite" Member="Comic" ThisKey="C_Id" OtherKey="C_Id" Type="Comic" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reader" Member="readers">
+    <Type Name="readers">
+      <Column Name="R_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="R_NickName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_hash" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="R_email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="R_birth_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="R_phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="R_gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="R_isvip" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="R_BanStatus" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="R_register_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="R_EmailVerify" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="readers_Favourite" Member="Favourites" ThisKey="R_Id" OtherKey="R_Id" Type="Favourite" />
+      <Association Name="readers_payment" Member="payments" ThisKey="R_Id" OtherKey="R_Id" Type="payment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Episode" Member="Episodes">
+    <Type Name="Episode">
+      <Column Name="E_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="E_Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="E_PageNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="E_DateUpload" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="E_Status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Comic_Episode" Member="Comic" ThisKey="C_Id" OtherKey="C_Id" Type="Comic" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comic" Member="Comics">
+    <Type Name="Comic">
+      <Column Name="C_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="C_Title" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="C_Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="C_Price" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="C_Publish_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="C_Status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C_AgeRestrict" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_IsForVip" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="C_category" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CC_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_CantViewable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Comic_Favourite" Member="Favourites" ThisKey="C_Id" OtherKey="C_Id" Type="Favourite" />
+      <Association Name="Comic_Episode" Member="Episodes" ThisKey="C_Id" OtherKey="C_Id" Type="Episode" />
+      <Association Name="Comic_payment" Member="payments" ThisKey="C_Id" OtherKey="C_Id" Type="payment" />
+      <Association Name="Category_Comic" Member="Category" ThisKey="C_category" OtherKey="Ca_Id" Type="Category" IsForeignKey="true" />
+      <Association Name="ComicCreator_Comic" Member="ComicCreator" ThisKey="CC_Id" OtherKey="CC_Id" Type="ComicCreator" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment" Member="payments">
+    <Type Name="payment">
+      <Column Name="P_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="P_Amount" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="P_Method" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_Currency" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="P_Transaction_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="C_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="R_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="P_Type" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Comic_payment" Member="Comic" ThisKey="C_Id" OtherKey="C_Id" Type="Comic" IsForeignKey="true" />
+      <Association Name="readers_payment" Member="readers" ThisKey="R_Id" OtherKey="R_Id" Type="readers" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComicPurchased" Member="ComicPurchaseds">
+    <Type Name="ComicPurchased">
+      <Column Name="C_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comic_Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Member" Member="Members">
+    <Type Name="Member">
+      <Column Name="Nickname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hash" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="[Register Date]" Member="Register_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Purchased" Member="Purchaseds">
+    <Type Name="Purchased">
+      <Column Name="R_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_category" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TempCategory" Member="TempCategories">
+    <Type Name="TempCategory">
+      <Column Name="Ca_Id" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Ca_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TopCategory" Member="TopCategories">
+    <Type Name="TopCategory">
+      <Column Name="Ca_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComicInfo" Member="ComicInfos">
+    <Type Name="ComicInfo">
+      <Column Name="C_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Title" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="CC_NickName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CC_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="C_Status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="C_CantViewable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="C_IsForVip" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="C_AgeRestrict" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="C_Publish_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Ca_Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[user]" Member="users">
+    <Type Name="user">
+      <Column Name="Nickname" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hash" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Profit" Member="Profits">
+    <Type Name="Profit">
+      <Column Name="R_NickName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Methold" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TopComic" Member="TopComics">
+    <Type Name="TopComic">
+      <Column Name="Comic_Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

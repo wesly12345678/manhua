@@ -1,0 +1,7 @@
+Episode Status
+I  Incomplete
+V  Verify
+U  Unverify
+B  Ban
+
+

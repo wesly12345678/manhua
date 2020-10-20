@@ -1,0 +1,81 @@
+﻿#imgUL {
+    position: absolute;
+    overflow: hidden;
+}
+.leftbar {
+    margin: 10px;
+    width: 300px;
+}
+.leftbaritem {
+    border: 1px solid black;
+    position: relative;
+}
+.leftbaritem:hover {
+    background-color: rgba(89, 82, 80, 0.22);
+}
+.leftbaritem a:hover {
+    text-decoration: none;
+    background-color: grey;
+}
+.num {
+    position: absolute;
+    top: 0;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding-left: 5px;
+    background-color: black;
+    color: white;
+    z-index: 1;
+}
+.textTD {
+    padding-top: 5px;
+}
+.all {
+    flex-direction: row;
+    padding: 20px
+}
+.homebody {
+    margin: 10px;
+    border: 1px solid black;
+    padding-left: 20px;
+}
+.items {
+    position: relative;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    width: 270px;
+    border: 1px solid black;
+    float: left;
+    height: 300px;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    z-index: 2;
+}
+.imgg {
+    position: relative;
+}
+.imageCss img{
+    z-index: 1;
+}
+.items:hover {
+    transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    background-color: white;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.7);
+    outline: 2px solid rgba(0,0,0,0.7);
+}
+.items a:hover {
+    text-decoration: none;
+}
+.textDD {
+    margin-left: 15px;
+    text-align: left;
+    z-index: 1000;
+}
